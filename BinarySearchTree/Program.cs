@@ -22,8 +22,9 @@ namespace BinarySearchTree
             bstm.Insert(3);
             bstm.Insert(16);
             bstm.Insert(63);
-
             bstm.Print();
+            Console.WriteLine(bstm.Search(63));
+            
         }
     }
 }

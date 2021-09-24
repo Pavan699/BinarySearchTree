@@ -41,5 +41,31 @@ namespace BinarySearchTree
                 PreOrder(root.Next);
             }
         }
+
+        public bool Search(int value)
+        {
+            return recSearch(root,value);
+        }
+        bool recSearch(Node root,int val)
+        {
+            
+            while(root != null)
+            {
+                if(root.Data == val)
+                {
+                    Console.WriteLine("Value {0} is Present",val);
+                    return true;
+                }
+                else if(root.Data > val)
+                {
+                    return recSearch(root.Prev, val);                   
+                }
+                else
+                {
+                    return recSearch(root.Next, val);
+                }
+            }
+            return false;
+        }
     }
 }
